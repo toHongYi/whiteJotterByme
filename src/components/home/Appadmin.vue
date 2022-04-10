@@ -1,6 +1,6 @@
 <template>
   <div>
-    Hello World!
+    Hello World! admin
     <h1>
       现在就撰写基本的html标签进行文档的处理吧！！!
       下方又是一个很基础,全面的内容了;
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'AppIndex'
+  name: 'admin'
 }
 </script>
 
