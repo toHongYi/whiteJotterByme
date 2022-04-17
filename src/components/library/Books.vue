@@ -1,7 +1,7 @@
 <template>
   <div>
+    <input type="search" placeholder="书籍搜索" onsearch="">这里是数据目录相关</input>
     <el-row style="height: 840px;">
-      <!--<search-bar></search-bar>-->
       <el-tooltip effect="dark" placement="right"
                   v-for="item in books"
                   :key="item.id">
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-export default  {
+export default {
   name: 'Books',
   data () {
     return {

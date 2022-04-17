@@ -1,4 +1,5 @@
 <template>
+<!-- 背景图片 -->
   <body id="poster">
     <el-form class="login-container" label-position="left"
              label-width="0px">
@@ -12,6 +13,7 @@
         <el-input type="password" v-model="loginForm.password"
                   auto-complete="off" placeholder="密码"></el-input>
       </el-form-item>
+          <p v-show="isShow" style="color: red">{{ showAlert }}</p>
       <el-form-item style="width: 100%">
         <el-button type="primary" style="width: 100%;background: #505458;border: none" v-on:click="login">登录</el-button>
       </el-form-item>
@@ -30,8 +32,10 @@ export default {
     return {
       loginForm: {
         username: 'admin',
-        password: '123'
+        password: '1234'
       },
+      isShow: false,
+      showAlert: '请校验账号密码',
       responseResult: []
     }
   },
@@ -50,9 +54,22 @@ export default {
             _this.$store.commit('login', _this.loginForm)
             var path = this.$route.query.redirect
             this.$router.replace({path: path === '/' || path === undefined ? '/index' : path})
+          } else {
+            // 选择是否以游客身份进入浏览、如果是这样的话;如果是的话,设置用户信息为游客;
+            var x
+            var r = confirm('密码错误,是否以游客身份进行访问!')
+            if (r == true) {
+              this.showAlert = '时刻准备游客身份,对跳转,鉴权进行探索,进行拦截器校验'
+              this.isShow = true
+            } else {
+              x = '请确认账户和密码'
+              this.isShow = true
+            }
           }
         })
         .catch(failResponse => {
+          var notic = '系统繁忙,请重新输入'
+          alert(notic)
         })
     }
   }

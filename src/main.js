@@ -6,7 +6,7 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import store from './store'
-
+// TODO main.js为入口文件
 // 设置反向代码: 前端请求默认发送到 http://localhost:8443/api
 var axios = require('axios')
 axios.defaults.baseURL = 'http://localhost:8443/api'
@@ -17,7 +17,9 @@ Vue.config.productionTip = false
 Vue.use(ElementUI)
 
 router.beforeEach((to, from, next) => {
+    //meta : 路由元信息; 每个路由身上携带的信息;
     if (to.meta.requireAuth) {
+     // <!-- 如果文档对象能获取到username信息,就放行 -->
       if (store.state.user.username) {
         next()
       } else {

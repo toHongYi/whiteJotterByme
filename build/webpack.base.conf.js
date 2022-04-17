@@ -30,11 +30,12 @@ module.exports = {
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
-  },
+  },  <!-- 下方配模块配置,可以省略.js,.vue,.json等后缀 -->
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
+      <!-- 可以 用'@'符号代替 'src'字符串 -->
       '@': resolve('src'),
     }
   },
