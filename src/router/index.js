@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // 导入组件
-import AppIndex from '@/components/home/AppIndex'
 import Login from '@/components/Login'
 import Home from '../components/Home'
-import Appadmin from '../components/home/Appadmin'
-import Appjotter from '../components/home/Appjotter'
+
+import Appjotter from '../components/home/JotterApp'
 import AppLibrary from '../components/library/AppLibrary'
-import TopDemo from '../components/TopDemo'
+import TopDemo from '../components/demo/TopDemo'
+import Appindex from '../components/home/IndexApp'
+import Appadmin from '../components/home/AdminApp'
 
 Vue.use(Router)
 
@@ -24,7 +25,7 @@ export default new Router({
         {
           path: '/index',
           name: 'AppIndex',
-          component: AppIndex,
+          component: Appindex,
           meta: {
             requireAuth: true
           }

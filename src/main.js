@@ -19,7 +19,7 @@ Vue.use(ElementUI)
 router.beforeEach((to, from, next) => {
     //meta : 路由元信息; 每个路由身上携带的信息;
     if (to.meta.requireAuth) {
-     // <!-- 如果文档对象能获取到username信息,就放行 -->
+      // <!-- 如果文档对象能获取到username信息,就放行 -->
       if (store.state.user.username) {
         next()
       } else {
@@ -34,6 +34,7 @@ router.beforeEach((to, from, next) => {
   }
 )
 
+// 下方钩子函数??
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
