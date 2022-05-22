@@ -9,7 +9,7 @@
     <router-view/>
   </div>
 </template>
-
+<!-- 获取数据 -->
 <script>
 export default {
   name: 'App'
