@@ -68,7 +68,7 @@ export default {
           }
         })
         .catch(failResponse => {
-          var notic = '系统繁忙,请重新输入'
+          var notic = '系统繁忙,请联系管理员查看后台日志'
           alert(notic)
         })
     }

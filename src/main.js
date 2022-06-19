@@ -11,8 +11,8 @@ import store from './store'
 var axios = require('axios')
 
 // TODO 设置接口地址为服务器地址;
-// axios.defaults.baseURL = 'http://localhost:8443/api'
-axios.defaults.baseURL = 'http://www.tohongyi.fun:8443/api'
+axios.defaults.baseURL = 'http://localhost:8443/api'
+// axios.defaults.baseURL = 'http://www.tohongyi.fun:8443/api'
 // 全局注册:之后可在其他组件中通过this.$axios 发送数据
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false
